@@ -213,11 +213,11 @@ export default function Home() {
 
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                    Engenharia de Processos
+                    Estagiário em Engenharia de Processos
                   </h3>
 
                   <p className="text-cyan-400 text-lg mb-4">
-                    Maxion Wheels — Módulo Volkswagen Resende
+                    Maxion — Módulo Volkswagen Resende
                   </p>
 
                   <p className="text-gray-400 mb-4">
@@ -253,11 +253,11 @@ export default function Home() {
 
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                    Engenharia de Qualidade
+                    Estagiário me Engenharia de Qualidade
                   </h3>
 
                   <p className="text-cyan-400 text-lg mb-4">
-                    Maxion Wheels — Módulo Volkswagen Resende
+                    Maxion — Módulo Volkswagen Resende
                   </p>
 
                   <p className="text-gray-400 mb-4">
