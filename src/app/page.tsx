@@ -2,14 +2,24 @@
 
 import { motion } from 'framer-motion'
 
-const projects = [
+type Project = {
+  title: string
+  description: string
+  tech: string
+  github: string
+  link?: string
+  image: string
+}
+
+const projects: Project[] = [
   {
     title: 'MES Pro - Monitoramento Industrial',
     description:
       'Sistema Full Stack para gestão de chão de fábrica com monitoramento de OEE e Yield (Qualidade) em tempo real.',
     tech: 'React (Next.js), Python (FastAPI), Supabase',
     github: 'https://github.com/pedromagina2/sistema-industrial',
-    link: 'https://sistema-industrial-orcin.vercel.app/'
+    link: 'https://sistema-industrial-orcin.vercel.app/',
+    image: '/projects/mes-pro.png'
   },
   {
     title: 'Bot Discord',
@@ -17,6 +27,7 @@ const projects = [
       'Sistema de automação e gerenciamento para servidores Discord.',
     tech: 'Python',
     github: 'https://github.com/pedromagina2',
+    image: '/projects/bot-discord.png'
   },
   {
     title: 'Portfólio Profissional',
@@ -24,7 +35,8 @@ const projects = [
       'Portfólio moderno desenvolvido com Next.js e Tailwind.',
     tech: 'Next.js',
     github: 'https://github.com/pedromagina2',
-  },
+    image: '/projects/portfolio.png'
+  }
 ]
 
 export default function Home() {
