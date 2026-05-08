@@ -4,19 +4,19 @@ import { motion } from 'framer-motion'
 
 const projects = [
   {
-    title: 'Bot Discord',
-    description:
-      'Sistema de automação e gerenciamento para servidores Discord.',
-    tech: 'Python',
-    github: 'https://github.com/pedromagina2',
-  },
-  {
     title: 'MES Pro - Monitoramento Industrial',
     description:
       'Sistema Full Stack para gestão de chão de fábrica com monitoramento de OEE e Yield (Qualidade) em tempo real.',
     tech: 'React (Next.js), Python (FastAPI), Supabase',
     github: 'https://github.com/pedromagina2/sistema-industrial',
     link: 'https://sistema-industrial-clbmhyyb2-pedromagina2s-projects.vercel.app/' 
+  },
+  {
+    title: 'Bot Discord',
+    description:
+      'Sistema de automação e gerenciamento para servidores Discord.',
+    tech: 'Python',
+    github: 'https://github.com/pedromagina2',
   },
   {
     title: 'Portfólio Profissional',
@@ -140,7 +140,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* CARD */}
+          {/* CARD ACADÊMICO/PROFISSIONAL */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -216,6 +216,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="bg-[#0f172a] border border-white/10 rounded-[40px] p-8 md:p-14 shadow-2xl"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
@@ -240,6 +241,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-center mb-16"
           >
             Trajetória Profissional
@@ -306,7 +308,7 @@ export default function Home() {
 
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                    Estagiário me Engenharia de Qualidade
+                    Estagiário em Engenharia de Qualidade
                   </h3>
 
                   <p className="text-cyan-400 text-lg mb-4">
@@ -336,6 +338,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold mb-16"
           >
             Tecnologias
@@ -382,6 +385,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* PROJETOS */}
       <section
         id="projetos"
@@ -392,6 +396,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-center mb-16"
           >
             Projetos
@@ -402,32 +407,45 @@ export default function Home() {
               <motion.div
                 key={index}
                 whileHover={{ y: -10 }}
-                className="bg-[#0f172a] border border-white/10 rounded-3xl p-8 shadow-2xl"
+                className="bg-[#0f172a] border border-white/10 rounded-3xl p-8 shadow-2xl flex flex-col justify-between"
               >
-                <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 flex items-center justify-center mb-6">
-                  <span className="text-2xl">🚀</span>
+                <div>
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 flex items-center justify-center mb-6">
+                    <span className="text-2xl">🚀</span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold mb-4">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-gray-400 leading-8 mb-6">
+                    {project.description}
+                  </p>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4">
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-400 leading-8 mb-6">
-                  {project.description}
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <span className="text-cyan-400 font-semibold">
+                <div className="flex items-center justify-between mt-auto">
+                  <span className="text-cyan-400 font-semibold text-sm">
                     {project.tech}
                   </span>
 
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    className="text-sm border border-cyan-400 px-4 py-2 rounded-xl hover:bg-cyan-400 hover:text-black transition"
-                  >
-                    GitHub
-                  </a>
+                  <div className="flex gap-2">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      className="text-xs border border-cyan-400 px-3 py-2 rounded-xl hover:bg-cyan-400 hover:text-black transition"
+                    >
+                      GitHub
+                    </a>
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        className="text-xs bg-cyan-500 text-black px-3 py-2 rounded-xl hover:bg-cyan-400 transition"
+                      >
+                        Demo
+                      </a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -442,6 +460,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold mb-8"
           >
             Currículo
@@ -478,7 +497,7 @@ export default function Home() {
             <a
               href="https://github.com/pedromagina2"
               target="_blank"
-              className="hover:text-cyan-400 transition"
+              className="hover:text-cyan-400 transition text-sm"
             >
               GitHub
             </a>
@@ -486,14 +505,14 @@ export default function Home() {
             <a
               href="https://www.linkedin.com/in/pedromagina/"
               target="_blank"
-              className="hover:text-cyan-400 transition"
+              className="hover:text-cyan-400 transition text-sm"
             >
               LinkedIn
             </a>
 
             <a
               href="mailto:pedromaginaf@outlook.com"
-              className="hover:text-cyan-400 transition"
+              className="hover:text-cyan-400 transition text-sm"
             >
               Email
             </a>
