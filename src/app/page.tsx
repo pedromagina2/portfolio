@@ -217,7 +217,7 @@ export default function Home() {
                   </h3>
 
                   <p className="text-cyan-400 text-lg mb-4">
-                    Maxion — Módulo Volkswagen Resende
+                    Módulo Maxion — Volkswagen Resende
                   </p>
 
                   <p className="text-gray-400 mb-4">
@@ -257,7 +257,7 @@ export default function Home() {
                   </h3>
 
                   <p className="text-cyan-400 text-lg mb-4">
-                    Maxion — Módulo Volkswagen Resende
+                    Módulo Maxion — Volkswagen Resende
                   </p>
 
                   <p className="text-gray-400 mb-4">
