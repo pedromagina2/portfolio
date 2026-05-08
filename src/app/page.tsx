@@ -9,7 +9,7 @@ const projects = [
       'Sistema Full Stack para gestão de chão de fábrica com monitoramento de OEE e Yield (Qualidade) em tempo real.',
     tech: 'React (Next.js), Python (FastAPI), Supabase',
     github: 'https://github.com/pedromagina2/sistema-industrial',
-    link: 'https://sistema-industrial-clbmhyyb2-pedromagina2s-projects.vercel.app/' 
+    link: 'https://sistema-industrial-orcin.vercel.app/'
   },
   {
     title: 'Bot Discord',
@@ -406,41 +406,51 @@ export default function Home() {
             {projects.map((project, index) => (
               <motion.div
                 key={index}
-                whileHover={{ y: -10 }}
-                className="bg-[#0f172a] border border-white/10 rounded-3xl p-8 shadow-2xl flex flex-col justify-between"
+                whileHover={{ y: -10, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 200 }}
+                className="bg-[#0f172a] border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col"
               >
-                <div>
-                  <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 flex items-center justify-center mb-6">
-                    <span className="text-2xl">🚀</span>
-                  </div>
+                {/* IMAGEM */}
+                <div className="h-48 w-full overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
 
-                  <h3 className="text-2xl font-bold mb-4">
+                {/* CONTEÚDO */}
+                <div className="p-7 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold mb-3">
                     {project.title}
                   </h3>
 
-                  <p className="text-gray-400 leading-8 mb-6">
+                  <p className="text-gray-400 leading-7 mb-5 text-sm">
                     {project.description}
                   </p>
-                </div>
 
-                <div className="flex items-center justify-between mt-auto">
-                  <span className="text-cyan-400 font-semibold text-sm">
-                    {project.tech}
-                  </span>
+                  {/* TECH */}
+                  <div className="mb-6">
+                    <span className="text-xs px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
+                      {project.tech}
+                    </span>
+                  </div>
 
-                  <div className="flex gap-2">
+                  {/* BOTÕES */}
+                  <div className="mt-auto flex gap-3">
                     <a
                       href={project.github}
                       target="_blank"
-                      className="text-xs border border-cyan-400 px-3 py-2 rounded-xl hover:bg-cyan-400 hover:text-black transition"
+                      className="flex-1 text-center text-xs py-3 rounded-xl border border-white/10 hover:bg-white/5 transition"
                     >
                       GitHub
                     </a>
+
                     {project.link && (
                       <a
                         href={project.link}
                         target="_blank"
-                        className="text-xs bg-cyan-500 text-black px-3 py-2 rounded-xl hover:bg-cyan-400 transition"
+                        className="flex-1 text-center text-xs py-3 rounded-xl bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition"
                       >
                         Demo
                       </a>
