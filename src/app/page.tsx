@@ -2,9 +2,61 @@
 
 import { motion } from 'framer-motion'
 
+const projects = [
+  {
+    title: 'Bot Discord',
+    description:
+      'Sistema de automação e gerenciamento para servidores Discord.',
+    tech: 'Python',
+    github: 'https://github.com/pedromagina2',
+  },
+  {
+    title: 'Sistema Web',
+    description:
+      'Aplicação moderna focada em backend e integração de sistemas.',
+    tech: 'Java',
+    github: 'https://github.com/pedromagina2',
+  },
+  {
+    title: 'Portfólio Profissional',
+    description:
+      'Portfólio moderno desenvolvido com Next.js e Tailwind.',
+    tech: 'Next.js',
+    github: 'https://github.com/pedromagina2',
+  },
+]
+
 export default function Home() {
   return (
     <main className="bg-[#020617] text-white overflow-hidden">
+
+      {/* NAVBAR */}
+<header className="fixed top-0 left-0 w-full z-50 backdrop-blur-2xl bg-black/20 border-b border-white/10">
+  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 className="text-xl font-black">
+      Pedro<span className="text-cyan-400">.</span>
+    </h1>
+
+    <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#sobre" className="hover:text-cyan-400 transition">
+        Sobre
+      </a>
+
+      <a href="#experiencia" className="hover:text-cyan-400 transition">
+        Experiência
+      </a>
+
+      <a href="#projetos" className="hover:text-cyan-400 transition">
+        Projetos
+      </a>
+
+      <a href="#tecnologias" className="hover:text-cyan-400 transition">
+        Tecnologias
+      </a>
+    </nav>
+  </div>
+</header>
+
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
         {/* FUNDO */}
@@ -157,7 +209,7 @@ export default function Home() {
       </section>
 
       {/* SOBRE */}
-      <section className="py-24 px-6 md:px-20">
+      <section id="sobre" className="py-24 px-6 md:px-20">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -181,7 +233,7 @@ export default function Home() {
       </section>
 
       {/* EXPERIÊNCIA */}
-      <section className="py-24 px-6 md:px-20 bg-[#0f172a]">
+      <section id="experiencia" className="py-24 px-6 md:px-20 bg-[#0f172a]">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
@@ -277,7 +329,7 @@ export default function Home() {
       </section>
 
       {/* TECNOLOGIAS */}
-      <section className="py-24 px-6 md:px-20">
+      <section id="tecnologias" className="py-24 px-6 md:px-20">
         <div className="max-w-6xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
@@ -329,6 +381,124 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* PROJETOS */}
+<section
+  id="projetos"
+  className="py-24 px-6 md:px-20 bg-[#020617]"
+>
+  <div className="max-w-7xl mx-auto">
+    <motion.h2
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-4xl md:text-5xl font-bold text-center mb-16"
+    >
+      Projetos
+    </motion.h2>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project, index) => (
+        <motion.div
+          key={index}
+          whileHover={{ y: -10 }}
+          className="bg-[#0f172a] border border-white/10 rounded-3xl p-8 shadow-2xl"
+        >
+          <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 flex items-center justify-center mb-6">
+            <span className="text-2xl">🚀</span>
+          </div>
+
+          <h3 className="text-2xl font-bold mb-4">
+            {project.title}
+          </h3>
+
+          <p className="text-gray-400 leading-8 mb-6">
+            {project.description}
+          </p>
+
+          <div className="flex items-center justify-between">
+            <span className="text-cyan-400 font-semibold">
+              {project.tech}
+            </span>
+
+            <a
+              href={project.github}
+              target="_blank"
+              className="text-sm border border-cyan-400 px-4 py-2 rounded-xl hover:bg-cyan-400 hover:text-black transition"
+            >
+              GitHub
+            </a>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* CURRÍCULO */}
+<section className="py-24 px-6">
+  <div className="max-w-4xl mx-auto text-center">
+    <motion.h2
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-4xl md:text-5xl font-bold mb-8"
+    >
+      Currículo
+    </motion.h2>
+
+    <p className="text-gray-400 text-lg leading-8 mb-10">
+      Baixe meu currículo profissional em PDF.
+    </p>
+
+    <a
+      href="/curriculo.pdf"
+      target="_blank"
+      className="bg-cyan-500 hover:bg-cyan-400 text-black px-8 py-4 rounded-2xl font-bold transition hover:scale-105 inline-block"
+    >
+      Download CV
+    </a>
+  </div>
+</section>
+
+{/* FOOTER */}
+<footer className="border-t border-white/10 py-10 px-6">
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <div>
+      <h3 className="text-2xl font-black">
+        Pedro<span className="text-cyan-400">.</span>
+      </h3>
+
+      <p className="text-gray-400 mt-2">
+        Backend Developer • Python • Java
+      </p>
+    </div>
+
+    <div className="flex items-center gap-5">
+      <a
+        href="https://github.com/pedromagina2"
+        target="_blank"
+        className="hover:text-cyan-400 transition"
+      >
+        GitHub
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/pedromagina/"
+        target="_blank"
+        className="hover:text-cyan-400 transition"
+      >
+        LinkedIn
+      </a>
+
+      <a
+        href="mailto:pedromaginaf@outlook.com"
+        className="hover:text-cyan-400 transition"
+      >
+        Email
+      </a>
+    </div>
+  </div>
+</footer>
     </main>
   )
 }
